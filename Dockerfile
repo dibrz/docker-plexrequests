@@ -1,13 +1,13 @@
-FROM lsiobase/ubuntu:xenial
+FROM dibrz/ubuntu-qemu:latest
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="zaggash <zaggash@users.noreply.github.com>,sparklyballs"
+LABEL build_version="dibrz version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="dibrz <dibrzdev@users.noreply.github.com>"
 
 # package versions
-ARG MONGO_VERSION="3.2.9"
+ARG MONGO_VERSION="4.0.1"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
@@ -28,7 +28,7 @@ RUN \
  echo "**** install mongo ****" && \
  curl -o \
  /tmp/mongo.tgz -L \
-	https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1604-$MONGO_VERSION.tgz  && \
+	https://fastdl.mongodb.org/linux/mongodb-linux-arm64-ubuntu1604-$MONGO_VERSION.tgz  && \
  mkdir -p \
 	/tmp/mongo_app && \
  tar xf \
