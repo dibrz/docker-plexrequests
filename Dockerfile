@@ -21,10 +21,10 @@ RUN \
 	curl && \
  echo "***** install nodejs ****" && \
  curl -sL \
-	https://deb.nodesource.com/setup_0.10 | bash - && \
+	https://deb.nodesource.com/setup_8.x | bash - && \
  apt-get install -y \
 	--no-install-recommends \
-	nodejs=0.10.48-1nodesource1~xenial1 && \
+	nodejs && \
  echo "**** install mongo ****" && \
  curl -o \
  /tmp/mongo.tgz -L \
